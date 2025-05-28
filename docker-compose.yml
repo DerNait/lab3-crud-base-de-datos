@@ -1,0 +1,25 @@
+services:
+  #Database Service
+  db:
+    image: postgres
+    container_name: postgres
+    volumes:
+      - ./postgresql/data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment: 
+      POSTGRES_DB: ${DB_DATABASE}
+      POSTGRES_USER: ${DB_USERNAME} 
+      POSTGRES_PASSWORD: ${DB_PASSWORD} 
+
+  # Application Service
+  app:
+    container_name: lab3_app
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/var/www/html
+    ports:
+      - "8080:80"
+    working_dir: /var/www/html
