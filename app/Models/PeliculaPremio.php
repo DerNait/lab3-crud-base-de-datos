@@ -9,12 +9,12 @@ class PeliculaPremio extends Model
     public $timestamps = true;
     protected $guarded = ['id'];
 
-    public function pelicula(): BelongsTo
+    public function pelicula()
     {
         return $this->belongsTo(Pelicula::class);
     }
 
-    public function premio(): BelongsTo
+    public function premio()
     {
         return $this->belongsTo(Premio::class);
     }
