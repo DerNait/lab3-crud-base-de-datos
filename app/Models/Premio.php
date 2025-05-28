@@ -8,7 +8,7 @@ class Premio extends Model
 {
     protected $fillable = ['nombre'];
 
-    public function peliculas(): BelongsToMany
+    public function peliculas()
     {
         return $this->belongsToMany(Pelicula::class, 'pelicula_premios', 'premio_id', 'pelicula_id')
             ->withPivot('año')

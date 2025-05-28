@@ -9,7 +9,7 @@ class Persona extends Model
     protected $table = 'personas';
     protected $fillable = ['nombre'];
 
-    public function peliculas(): BelongsToMany
+    public function peliculas()
     {
         return $this->belongsToMany(Pelicula::class, 'pelicula_personas', 'persona_id', 'pelicula_id')
             ->withPivot('rol')
