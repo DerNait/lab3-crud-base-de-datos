@@ -8,10 +8,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     @stack('styles')
 </head>
-<body>
-    <header class="bg-dark text-light py-2">
-        <div class="container">
-            <a href="{{ url('/peliculas') }}" class="navbar-brand text-light">CRUD peliculas</a>
+<body data-bs-theme="dark">
+    <header class="bg-primary-subtle text-light py-2">
+        <div class="container text-center">
+            <a href="{{ url('/peliculas') }}" class="navbar-brand text-light">CRUD Películas</a>
         </div>
     </header>
 
